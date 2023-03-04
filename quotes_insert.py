@@ -46,8 +46,8 @@ if insert:
             # st.write(f"{row[0]} :{row[1]}: {row[2]}")
             bulk_insert.append({ "quote": row[0],"author": row[1], "url": row[2]})
             # st.write(bulk_insert)
-            result = supabase.table("Quote").insert(bulk_insert).execute()
         st.code(bulk_insert)
+        result = supabase.table("Quote").insert(bulk_insert).execute()
         st.write(f'Rows inserted!')
     except:
         st.error('Error: No rows inserted')
